@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Principal">
+
+        <CheckBoxPreference
+            android:title="Habilita Preferencias"
+            android:key="EnablePreferences"
+            android:summary="Marque para habilitar outras opções"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Preferências">
+        <ListPreference
+            android:title="Plataforma"
+            android:key="plataforma"
+            android:dependency="EnablePreferences"
+            android:summary="Seleciona a plataforma"
+            android:entries="@array/plataformas"
+            android:entryValues="@array/plataformasValues" />
+
+        <EditTextPreference
+            android:title="Opinião"
+            android:key="opiniao"
+            android:dependency="EnablePreferences"
+            android:summary="Diga sua opinião"
+            android:dialogTitle="Diga sua opinião"
+            android:defaultValue="Digite aqui..." />
+
+        <RingtonePreference
+            android:title="Ringtone"
+            android:key="Ringtone"
+            android:dependency="EnablePreferences"
+            android:summary="Selecione o Ringtone"
+            android:ringtoneType="all" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Preferencias Avançadas">
+        <PreferenceScreen
+            android:title="Experiência">
+            <EditTextPreference
+                android:title="Informe a preferência"
+                android:key="experiencia"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>
